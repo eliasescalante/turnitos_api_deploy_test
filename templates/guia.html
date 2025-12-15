@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>API Turnos Médicos</title>
+    <script src="/static/main.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        button {
+            margin: 5px 0;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+        }
+        input {
+            display: block;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>API Gestión de Turnos</h1>
+
+    <h2>📌 Endpoints</h2>
+
+    <button onclick="getMedicos()">GET /medicos</button><br>
+    <button onclick="getTurnos()">GET /turnos/&lt;medico_id&gt;</button>
+
+    <h3>Resultado</h3>
+    <pre id="resultado"></pre>
+
+    <hr>
+
+    <h2>📅 Reservar Turno</h2>
+
+    <input type="number" id="medico_id" placeholder="ID Médico">
+    <input type="datetime-local" id="fecha_hora">
+    <input type="text" id="paciente" placeholder="Nombre Paciente">
+
+    <button onclick="reservarTurno()">POST /turnos</button>
+
+</body>
+</html>
